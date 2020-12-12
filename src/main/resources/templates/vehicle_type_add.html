@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Wash</title>
+
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/css/simple-sidebar.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Car wash</div>
+        <div class="list-group list-group-flush">
+            <div class="list-group list-group-flush">
+                <a href="/" class="list-group-item list-group-item-action bg-light">Home</a>
+                <a href="/admin" class="list-group-item list-group-item-action bg-light">Admin</a>
+                <a href="/booking" class="list-group-item list-group-item-action bg-light">Booking</a>
+                <a href="/vehicle-type" class="list-group-item list-group-item-action bg-light">Vehicle type</a>
+                <a href="/contact-us" class="list-group-item list-group-item-action bg-light">Contact us</a>
+            </div>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">Menu</button>
+        </nav>
+
+        <div class="container-fluid">
+            <form action="/vehicle-type/add" method="post">
+                <div class="card h-100 mb-2" style="min-width: 100%">
+                    <div class="card-header">
+                        Add vehicle type
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="vehicle_type">Vehicle type</label>
+                            <input type="text" class="form-control" id="vehicle_type" name="vehicle_type">
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" class="form-control" id="price" name="price">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" type="submit"> Save</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Footer -->
+            <footer class="py-5 bg-dark row">
+                <div class="container">
+                    <p class="m-0 text-center text-white">Copyright &copy; CarWash 2020</p>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+</body>
+</html>
